@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "669336520294",
+    "project_id": "cloudmine-abf8e",
+    "storage_bucket": "cloudmine-abf8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669336520294:android:d69931a050fb55067ccfa7",
+        "android_client_info": {
+          "package_name": "com.chopchop.minecloud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669336520294-3bkop5uqobhm0659okmmgm2lei06ppkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSKNEL7UEW_kugfGu44RTj5kqhcpsuoRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669336520294-3bkop5uqobhm0659okmmgm2lei06ppkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="5dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Баланс"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/balanceTW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+
+                    android:lineSpacingExtra="8sp"
+                    android:text="0.00000000 BTC"
+                    android:textColor="#000000"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/rubBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="~ 482.35 ₽"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#F6F6F6"
+                        android:fontFamily="sans-serif-black"
+                        android:onClick="onClickBoost"
+                        android:text="Ускорить"
+                        android:textColor="#4089DD"
+                        android:textSize="18dp"
+                        app:cornerRadius="15dp"
+                        app:icon="@drawable/ic_free_icon_ruble_1490839"
+                        app:iconTint="#FFFFFF"
+                        app:iconTintMode="multiply" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#F6F6F6"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Вывести"
+                        android:textColor="#4089DD"
+                        android:textSize="18dp"
+                        app:cornerRadius="15dp"
+                        app:icon="@drawable/ic_free_icon_purse_3459138"
+                        app:iconTint="#FFFFFF"
+                        app:iconTintMode="multiply" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="5dp"
+            app:cardBackgroundColor="#F8F8F8"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-medium"
+
+                    android:gravity="center"
+                    android:lineSpacingExtra="8sp"
+                    android:text="Разгон: 1X"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/textvieww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-medium"
+
+                    android:gravity="center"
+                    android:lineSpacingExtra="8sp"
+                    android:text="увеличение скорости майнинга"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="#F8F8F8"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/speedTW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="sans-serif-black"
+                    android:lineSpacingExtra="8sp"
+                    android:text="12639.65858 H/s"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="36dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:scaleY="1.5" />
+
+                <TextView
+                    android:id="@+id/hashTW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-medium"
+
+                    android:gravity="center"
+                    android:lineSpacingExtra="8sp"
+                    android:text="8e0f03dd8395ebb562de5fb0d5d02923150af4acdc8e8f3fe4d97cd496f7f2f5 "
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
