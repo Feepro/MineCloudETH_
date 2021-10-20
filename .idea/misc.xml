@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/layout/mining.xml" value="0.22056159420289856" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/drawable-v24/shape_bottom_sheet.xml" value="0.30833333333333335" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/drawable/ic_bitcoin.xml" value="0.30833333333333335" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/drawable/ic_free_icon_ruble_1490839.xml" value="0.30833333333333335" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/drawable/ic_free_icon_ruble_small.xml" value="0.30833333333333335" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/layout/activity_main.xml" value="0.46224556795797767" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/layout/buy_bottom_sheet.xml" value="0.34601449275362317" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/layout/enter_code_bottom_sheet.xml" value="0.34601449275362317" />
+        <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/layout/mining.xml" value="0.5" />
         <entry key="..\:/Android prodjectsssssss/MineCloud2/app/src/main/res/layout/share.xml" value="0.42535787321063395" />
       </map>
     </option>

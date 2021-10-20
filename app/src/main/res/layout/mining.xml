@@ -29,6 +29,15 @@
                 android:orientation="vertical">
 
 
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    app:adSize="BANNER"
+                    app:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
@@ -42,20 +51,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="sans-serif-black"
 
+                    android:drawableRight="@drawable/ic_bitcoin"
+                    android:fontFamily="sans-serif-black"
                     android:lineSpacingExtra="8sp"
-                    android:text="0.00000000 BTC"
+                    android:text="0.00000000 "
                     android:textColor="#000000"
                     android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/rubBalance"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="30dp"
-                    android:text="~ 482.35 ₽"
-                    android:textAlignment="center" />
+                    android:drawableEnd="@drawable/ic_free_icon_ruble_small"
+                    android:gravity="center"
+                    android:text="~ 482.35 "
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -93,6 +107,7 @@
                         android:text="Вывести"
                         android:textColor="#4089DD"
                         android:textSize="18dp"
+                        android:visibility="gone"
                         app:cornerRadius="15dp"
                         app:icon="@drawable/ic_free_icon_purse_3459138"
                         app:iconTint="#FFFFFF"
@@ -123,7 +138,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/razgonTW"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

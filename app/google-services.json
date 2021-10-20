@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "669336520294",
-    "project_id": "cloudmine-abf8e",
-    "storage_bucket": "cloudmine-abf8e.appspot.com"
+    "project_number": "849378068088",
+    "firebase_url": "https://cloudmine-d99ba-default-rtdb.firebaseio.com",
+    "project_id": "cloudmine-d99ba",
+    "storage_bucket": "cloudmine-d99ba.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:669336520294:android:d69931a050fb55067ccfa7",
+        "mobilesdk_app_id": "1:849378068088:android:e14126a4f054826e708f8d",
         "android_client_info": {
           "package_name": "com.chopchop.minecloud"
         }
       },
       "oauth_client": [
         {
-          "client_id": "669336520294-3bkop5uqobhm0659okmmgm2lei06ppkl.apps.googleusercontent.com",
+          "client_id": "849378068088-5vtfcgld47rd2kpd4vl420a1et8q0dlr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBSKNEL7UEW_kugfGu44RTj5kqhcpsuoRo"
+          "current_key": "AIzaSyDWBB8JThBp0sUrG2juOg9TCS1MCXt1Kjk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "669336520294-3bkop5uqobhm0659okmmgm2lei06ppkl.apps.googleusercontent.com",
+              "client_id": "849378068088-5vtfcgld47rd2kpd4vl420a1et8q0dlr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

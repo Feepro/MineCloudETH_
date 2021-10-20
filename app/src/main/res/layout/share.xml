@@ -29,6 +29,7 @@
 
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:padding="5dp"
         app:cardBackgroundColor="#F8F8F8"
         app:cardCornerRadius="15dp"
@@ -59,7 +60,7 @@
                 android:textSize="19dp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/userId"
                 android:layout_width="136dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -100,13 +101,13 @@
                 android:layout_weight="1"
                 android:backgroundTint="#F6F6F6"
                 android:fontFamily="sans-serif-black"
+                android:onClick="enterCode"
                 android:text="Ввести код"
                 android:textColor="#4089DD"
                 android:textSize="18dp"
                 app:cornerRadius="15dp"
                 app:iconTint="#FFFFFF"
-                app:iconTintMode="multiply"
-                android:onClick="enterCode"/>
+                app:iconTintMode="multiply" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
