@@ -12,8 +12,8 @@ android {
         applicationId "com.chopchop.minecloud"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -66,6 +66,8 @@ dependencies {
 
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    implementation 'com.android.billingclient:billing:4.0.0'
 
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
 }

@@ -14,11 +14,15 @@ import com.chopchop.minecloud.Utils.addSub
 import com.chopchop.minecloud.Utils.getBalance
 import com.chopchop.minecloud.Utils.getMySubs
 import com.chopchop.minecloud.Utils.getRazgon
+import com.chopchop.minecloud.Utils.getRubBalance
 import com.chopchop.minecloud.Utils.getUserId
 import com.chopchop.minecloud.Utils.saveBalance
 import com.chopchop.minecloud.Utils.saveRazgon
+import com.chopchop.minecloud.Utils.saveRubBalance
 import com.chopchop.minecloud.Utils.saveUserId
 import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -35,9 +39,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var speedBottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private lateinit var enterCodeBottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private lateinit var myRef:DatabaseReference
+    private lateinit var balanceTW:TextView
+    private lateinit var rubBalanceTW:TextView
+    var rubBalance: Float = 0f
     var schet:Double = 0.00000001
     var razgon = 1f;
     var mRewardedAd: RewardedAd? = null
+    private var mySubs = 0
+    private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,33 +61,63 @@ class MainActivity : AppCompatActivity() {
         myRef = database.getReference("users_refers")
 
 
-        val ballanceTW = findViewById<TextView>(R.id.balanceTW)
-        val rubBalance = findViewById<TextView>(R.id.rubBalance)
+        balanceTW= findViewById<TextView>(R.id.balanceTW)
+        rubBalanceTW = findViewById<TextView>(R.id.rubBalance)
         val speedTW = findViewById<TextView>(R.id.speedTW)
         val hashTW = findViewById<TextView>(R.id.hashTW)
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
 
         schet = getBalance(this)
         razgon = getRazgon(this)
+        mySubs = getMySubs(this)
+        rubBalance = getRubBalance(this)
+        if(rubBalance != 0f) {
+            val balanceTW2 = findViewById<TextView>(R.id.balanceTW2)
+            balanceTW2.visibility = View.VISIBLE
+            val df = DecimalFormat("#.##")
+            df.roundingMode = RoundingMode.CEILING
+            balanceTW2.text = df.format(rubBalance)+" "
+        }
         updateRazgon()
 
-        createUser(ballanceTW,rubBalance)
+        createUser(balanceTW,rubBalanceTW)
 
+        object : CountDownTimer(99999999,300000){
+            override fun onTick(p0: Long) {
+                var adRequest = AdRequest.Builder().build()
+                InterstitialAd.load(this@MainActivity,"ca-app-puqweqb-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+                    override fun onAdFailedToLoad(adError: LoadAdError) {
+                        Log.d("TAG", adError?.message)
+                        mInterstitialAd = null
+                    }
 
+                    override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                        Log.d("TAG", "Ad was loaded.")
+                        mInterstitialAd = interstitialAd
+                        mInterstitialAd?.show(this@MainActivity)
+                    }
+                })
+            }
+
+            override fun onFinish() {
+                finish()
+            }
+
+        }.start()
 
 
 
 
         launch(UI) {
-
                 while (true){
+                    mySubs = getMySubs(this@MainActivity)
                     saveBalance(this@MainActivity,schet)
                     schet+=0.00000001;
                     progressBar.progress = 0
                     while(progressBar.progress < 99){
                         progressBar.progress +=10
                         delay(((5000..7000).random()/10/razgon).toLong())
-                        speedTW.text = "116"+ (0..99).random()+"."+(1000..9999).random()+" H/s"
+                        speedTW.text = (116*razgon).toInt().toString()+ (0..99).random()+"."+(1000..9999).random()+" H/s"
 
                         val source = "abcdefghijklmnopqrstuvwxyz123456789123456789123456789"
 
@@ -88,9 +127,9 @@ class MainActivity : AppCompatActivity() {
                             .joinToString("")
                     }
 
-                    val strSchet = schet.toBigDecimal().toPlainString().subSequence(0,10).toString()
-                    ballanceTW.text = "$strSchet "
-                    rubBalance.text = "~ "+(schet/0.000000371).toBigDecimal().toPlainString().subSequence(0,5).toString() + " "
+                    val strSchet = (schet+mySubs*0.00005).toBigDecimal().toPlainString().subSequence(0,10).toString()
+                    balanceTW.text = "$strSchet "
+                    rubBalanceTW.text = "~ "+(schet/0.000000371+mySubs*0.00005).toBigDecimal().toPlainString().subSequence(0,5).toString() + " "
 
             }
         }
@@ -114,6 +153,19 @@ class MainActivity : AppCompatActivity() {
                 mRewardedAd = rewardedAd
             }
         })
+        if(getUserId(this) != -1)
+            InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    Log.d("TAG", adError?.message)
+                    mInterstitialAd = null
+                }
+
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    Log.d("TAG", "Ad was loaded.")
+                    mInterstitialAd = interstitialAd
+                    mInterstitialAd?.show(this@MainActivity)
+                }
+            })
 
 
     }
@@ -126,7 +178,7 @@ class MainActivity : AppCompatActivity() {
         enterCodeBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 
-    private fun createUser(ballanceTW: TextView, rubBalance: TextView) {
+    private fun createUser(balanceTW: TextView, rubBalanceTW: TextView) {
         val userIdTW = findViewById<TextView>(R.id.userId)
         if(getUserId(this) == -1) {
             val userId = (100000..999999).random()
@@ -137,17 +189,16 @@ class MainActivity : AppCompatActivity() {
             val userId = getUserId(this)
             myRef.child(userId.toString()).addValueEventListener(object :ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    if(snapshot.value.toString().toInt() > getMySubs(this@MainActivity)){
-                        addMySubs(this@MainActivity)
-                        schet+= 0.00005
+                    if(snapshot.value.toString().toInt() != getMySubs(this@MainActivity)){
+                            addMySubs(this@MainActivity,snapshot.value.toString().toInt())
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {}
             })
             userIdTW.text = userId.toString()
-            ballanceTW.text = "${schet.toBigDecimal().toPlainString().subSequence(0,10)} BTC"
-            rubBalance.text = "~ "+(schet/0.000000371).toBigDecimal().toPlainString().subSequence(0,5).toString() + " ₽"
+            balanceTW.text = "${(schet+mySubs*0.00005).toBigDecimal().toPlainString().subSequence(0,10)} "
+            rubBalanceTW.text = "~ "+((schet+mySubs*0.00005)/0.000000371).toBigDecimal().toPlainString().subSequence(0,5).toString() + " "
 
         }
     }
@@ -173,6 +224,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateRazgon(){
+
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.CEILING
         findViewById<TextView>(R.id.razgonTW).text = "Разгон: ${df.format(razgon)}X"
@@ -213,6 +265,46 @@ class MainActivity : AppCompatActivity() {
                 })
             }
         }
+
+    }
+
+    fun trade(view: android.view.View) {
+        if((schet+mySubs*0.00005) < 0.0001) {
+            Toast.makeText(
+                this,
+                "Недостаточно средств (для обмена нужно более 0,00010000)",
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+        if(razgon*25 < 15){
+            Toast.makeText(
+                this,
+                "Недостаточный разгон (для обмена нужно более Х15)",
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+        val balanceTW2 = findViewById<TextView>(R.id.balanceTW2)
+        Toast.makeText(
+            this,
+            "Поздравляем, все монеты конвертированны. Спасибо что играете с нами!",
+            Toast.LENGTH_LONG
+        ).show()
+            balanceTW2.visibility = View.VISIBLE
+            val df = DecimalFormat("#.##")
+            df.roundingMode = RoundingMode.CEILING
+            rubBalance += ((schet+mySubs*0.00005)/0.000000371).toFloat()
+            balanceTW2.text = df.format(rubBalance)+" "
+            saveRubBalance(this,rubBalance)
+        schet = 0.00000002
+        saveBalance(this@MainActivity,schet)
+        val userId = getUserId(this)
+        myRef.child(userId.toString()).setValue(0)
+        addMySubs(this@MainActivity,0)
+
+        balanceTW.text = "0 "
+        rubBalanceTW.text = "~ 0 "
 
     }
 }

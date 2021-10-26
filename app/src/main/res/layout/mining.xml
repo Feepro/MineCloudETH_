@@ -2,6 +2,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
+                    android:visibility="gone"
                     app:adSize="BANNER"
                     app:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
 
@@ -44,7 +46,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="Баланс"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/balanceTW"
@@ -67,9 +70,24 @@
                     android:layout_marginBottom="30dp"
                     android:drawableEnd="@drawable/ic_free_icon_ruble_small"
                     android:gravity="center"
-                    android:text="~ 482.35 "
+                    android:text="~ 000.00"
                     android:textAlignment="center"
                     android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/balanceTW2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:layout_marginBottom="30dp"
+                    android:drawableRight="@drawable/ic_free_icon_ruble_large"
+                    android:fontFamily="sans-serif-black"
+                    android:lineSpacingExtra="8sp"
+                    android:text="0.00000000 "
+                    android:textColor="#000000"
+                    android:textSize="36sp"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,7 +102,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:backgroundTint="#F6F6F6"
+                        android:backgroundTint="#FFFFFF"
                         android:fontFamily="sans-serif-black"
                         android:onClick="onClickBoost"
                         android:text="Ускорить"
@@ -96,20 +114,23 @@
                         app:iconTintMode="multiply" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/trade"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
-                        android:backgroundTint="#F6F6F6"
+                        android:backgroundTint="#FFFFFF"
+                        android:drawableLeft="@drawable/ic_bitcoin_small"
+                        android:drawableRight="@drawable/ic_free_icon_ruble_1490839"
                         android:fontFamily="sans-serif-black"
-                        android:text="Вывести"
+                        android:onClick="trade"
+                        android:text="----->"
                         android:textColor="#4089DD"
                         android:textSize="18dp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         app:cornerRadius="15dp"
-                        app:icon="@drawable/ic_free_icon_purse_3459138"
+                        app:iconGravity="textStart"
                         app:iconTint="#FFFFFF"
                         app:iconTintMode="multiply" />
                 </LinearLayout>

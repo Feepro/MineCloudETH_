@@ -140,10 +140,10 @@ object Utils {
             true
         }
     }
-    fun addMySubs(context: Context){
+    fun addMySubs(context: Context,mySubs:Int){
         val mPrefs: SharedPreferences = context.getSharedPreferences("SPData", Context.MODE_PRIVATE)
         val prefsEditor: SharedPreferences.Editor = mPrefs.edit()
-        prefsEditor.putInt("mySubs", getMySubs(context)+1)
+        prefsEditor.putInt("mySubs", mySubs)
         prefsEditor.apply()
     }
     fun getMySubs(context: Context): Int {
@@ -161,5 +161,16 @@ object Utils {
 
         val mPrefs: SharedPreferences = context.getSharedPreferences("SPData", Context.MODE_PRIVATE)
         return mPrefs.getFloat("razgon", 1f)
+    }
+    fun saveRubBalance(context: Context, rubBalance: Float){
+        val mPrefs: SharedPreferences = context.getSharedPreferences("SPData", Context.MODE_PRIVATE)
+        val prefsEditor: SharedPreferences.Editor = mPrefs.edit()
+        prefsEditor.putFloat("rubBalance", rubBalance)
+        prefsEditor.apply()
+    }
+    fun getRubBalance(context: Context): Float {
+
+        val mPrefs: SharedPreferences = context.getSharedPreferences("SPData", Context.MODE_PRIVATE)
+        return mPrefs.getFloat("rubBalance", 0f)
     }
 }
