@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "849378068088-8ipvhk1vcvtj5vbolncsa5l6etn6hq46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chopchop.minecloud",
+            "certificate_hash": "d60d4838fe4ece543c5fdd5fa386f320ee573061"
+          }
+        },
+        {
           "client_id": "849378068088-5vtfcgld47rd2kpd4vl420a1et8q0dlr.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -50,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -98,7 +98,7 @@
                 android:layout_marginTop="15dp">
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/add2xRazgon"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
@@ -115,7 +115,7 @@
                     android:textSize="23dp" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/add6xRazgon"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
@@ -138,7 +138,7 @@
                 android:layout_marginTop="15dp">
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/add25xRazgon"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
@@ -155,7 +155,7 @@
                     android:textSize="23dp" />
 
                 <Button
-                    android:id="@+id/button8"
+                    android:id="@+id/add50xRazgon"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
@@ -179,7 +179,7 @@
                 android:layout_marginTop="15dp">
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/add100xRazgon"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
@@ -196,7 +196,7 @@
                     android:textSize="23dp" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/add200xRazgon"
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"

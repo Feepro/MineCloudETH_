@@ -5,6 +5,11 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+        storeFile file('C:\\Users\\Oao\\Desktop\\private_key.pepk')
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -12,8 +17,8 @@ android {
         applicationId "com.chopchop.minecloud"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 2
-        versionName "2.0"
+        versionCode 11
+        versionName "6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -53,6 +58,7 @@ dependencies {
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.3'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -69,5 +75,9 @@ dependencies {
 
     implementation 'com.android.billingclient:billing:4.0.0'
 
+    implementation 'com.anjlab.android.iab.v3:library:2.0.0'
+    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0-beta03'
+    implementation 'com.google.firebase:firebase-appcheck-debug:16.0.0-beta03'
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+
 }
