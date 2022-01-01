@@ -79,17 +79,17 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         var currentUser = auth.currentUser
 // Configure Google Sign In
+        if(Utils.getUserId(this) == -1) {
+            val gso = GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("849378068088-5vtfcgld47rd2kpd4vl420a1et8q0dlr.apps.googleusercontent.com")
+                .requestEmail()
+                .build()
 
-        val gso = GoogleSignInOptions
-            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("849378068088-5vtfcgld47rd2kpd4vl420a1et8q0dlr.apps.googleusercontent.com")
-            .requestEmail()
-            .build()
-
-         val googleSignInClient = GoogleSignIn.getClient(this, gso)
+            val googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         startActivityForResult(googleSignInClient.signInIntent,1)
-
+        }
         speedBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottom_sheet))
         enterCodeBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.enterCodeSheet))
         //bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED

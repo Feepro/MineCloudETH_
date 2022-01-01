@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    android:background="@drawable/back_eth"
+    tools:context=".MainActivity">
 
 
     <ScrollView
@@ -24,6 +24,7 @@
                 android:layout_width="411dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/background_card"
                 app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,6 +40,7 @@
 
                         android:lineSpacingExtra="8sp"
                         android:text="Профиль"
+                        android:textColor="@color/black"
                         android:textSize="30dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +104,7 @@
 
 
     <include layout="@layout/buy_bottom_sheet" />
+
     <include layout="@layout/enter_code_bottom_sheet" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

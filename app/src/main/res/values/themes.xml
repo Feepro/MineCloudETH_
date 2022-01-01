@@ -12,7 +12,7 @@
 
         <item name="cardBackgroundColor">#f5f5f5</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#FFBB86FC</item>
         <!-- Customize your theme here. -->
 
 

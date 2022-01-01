@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_sheet"
-    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="420dp"
     android:background="@drawable/shape"
+    android:backgroundTint="#BAFFFFFF"
     android:orientation="vertical"
     app:behavior_hideable="true"
     app:behavior_peekHeight="0dp"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textView2"
@@ -42,15 +43,17 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="62dp"
-            android:layout_height="62dp"
-            android:layout_marginEnd="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#00FFFFFF"
             android:scaleType="fitXY"
+            android:scaleX="1.7"
+            android:scaleY="1.7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo1" />
+            app:srcCompat="@drawable/ic_bitcoin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

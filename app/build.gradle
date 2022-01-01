@@ -17,7 +17,7 @@ android {
         applicationId "com.chopchop.minecloud"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 11
+        versionCode 12
         versionName "6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -39,8 +39,11 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
     'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'com.google.android.material:material:1.2.0'
+
+
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.27.0-eap13"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.27.0-eap13" // Поддержка UI
